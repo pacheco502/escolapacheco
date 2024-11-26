@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title>Centro Educacional Pacheco - Buscar Aluno</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (Agora com fundo azul) -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-primary sidebar collapse" id="sidebarMenu">
+                <div class="position-sticky pt-3">
+                    <h5 class="text-center text-white mt-2">Centro Educacional Pacheco</h5>
+                    <hr>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Cadastrar.Aluno.html">
+                                <i class="bi bi-person-plus"></i> Cadastrar Aluno
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Alterar.Aluno.html">
+                                <i class="bi bi-pencil-square"></i> Alterar Cadastro
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" href="Buscar.Aluno.html">
+                                <i class="bi bi-search"></i> Consultar Aluno
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Atendimento.html">
+                                <i class="bi bi-clipboard-data"></i> Registrar Atendimento
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Login.Sistema.html">
+                                <i class="bi bi-box-arrow-right"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <header>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mt-3">
+                            <li class="breadcrumb-item"><a href="Menu.Sistema.html">Menu</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Buscar</li>
+                        </ol>
+                    </nav>
+                </header>
+                <div class="text-center my-4">
+                    <h3>Buscar Aluno</h3>
+                </div>
+
+                <form id="searchForm" onsubmit="searchAluno(event)">
+                    <div class="mb-3">
+                        <label for="searchName" class="form-label">Nome do Aluno</label>
+                        <input type="text" class="form-control" id="searchName" name="searchName" required />
+                    </div>
+                    <div class="text-center mb-3">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="button" class="btn btn-secondary" onclick="window.history.back();">Voltar</button>
+                    </div>
+                </form>
+
+                <div id="resultSection" class="table-responsive d-none">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Matrícula</th>
+                                <th>CPF</th>
+                                <th>Telefone</th>
+                                <th>Data de Nascimento</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultTableBody">
+                            <!-- Resultados da busca serão inseridos aqui -->
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        function searchAluno(event) {
+            event.preventDefault();
+
+            const searchName = document.getElementById('searchName').value;
+            const resultSection = document.getElementById('resultSection');
+            const resultTableBody = document.getElementById('resultTableBody');
+
+            // Limpar resultados anteriores
+            resultTableBody.innerHTML = '';
+
+            // Adicionar exemplo de resultado (substituir por lógica de busca real)
+            const exampleResult = [
+                {
+                    nome: 'Maria Santos',
+                    matricula: '20210001',
+                    cpf: '123.456.789-00',
+                    telefone: '(11) 91234-5678',
+                    dataNascimento: '2000-01-01'
+                },
+                {
+                    nome: 'Carlos Silva',
+                    matricula: '20210002',
+                    cpf: '987.654.321-00',
+                    telefone: '(11) 98765-4321',
+                    dataNascimento: '1999-02-02'
+                }
+            ];
+
+            exampleResult.forEach(aluno => {
+                if (aluno.nome.toLowerCase().includes(searchName.toLowerCase())) {
+                    const row = `<tr>
+                        <td>${aluno.nome}</td>
+                        <td>${aluno.matricula}</td>
+                        <td>${aluno.cpf}</td>
+                        <td>${aluno.telefone}</td>
+                        <td>${aluno.dataNascimento}</td>
+                    </tr>`;
+                    resultTableBody.innerHTML += row;
+                }
+            });
+
+            resultSection.classList.remove('d-none');
+        }
+    </script>
+</body>
+</html>

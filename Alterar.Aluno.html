@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title>Centro Educacional Pacheco - Alterar Cadastro de Aluno</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (Agora com fundo azul) -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-primary sidebar collapse" id="sidebarMenu">
+                <div class="position-sticky pt-3">
+                    <h5 class="text-center text-white mt-2">Centro Educacional Pacheco</h5>
+                    <hr>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Cadastrar.Aluno.html">
+                                <i class="bi bi-person-plus"></i> Cadastrar Aluno
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" href="Alterar.Aluno.html">
+                                <i class="bi bi-pencil-square"></i> Alterar Cadastro
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Buscar.Aluno.html">
+                                <i class="bi bi-search"></i> Consultar Aluno
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Atendimento.html">
+                                <i class="bi bi-clipboard-data"></i> Registrar Atendimento
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Login.Sistema.html">
+                                <i class="bi bi-box-arrow-right"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <header>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mt-3">
+                            <li class="breadcrumb-item"><a href="Menu.Sistema.html">Menu</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Alterar</li>
+                        </ol>
+                    </nav>
+                </header>
+                <div class="text-center my-4">
+                    <h3>Alterar Cadastro de Aluno</h3>
+                </div>
+
+                <form action="#" method="post">
+                    <!-- Nome -->
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required />
+                    </div>
+                
+                    <!-- Matrícula/RA -->
+                    <div class="mb-3">
+                        <label for="matricula" class="form-label">Matrícula/RA</label>
+                        <input type="text" class="form-control" id="matricula" name="matricula" required />
+                    </div>
+                
+                    <!-- CPF -->
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required />
+                    </div>
+                
+                    <!-- Data de Nascimento -->
+                    <div class="mb-3">
+                        <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required />
+                    </div>
+                
+                    <!-- Telefone -->
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(11) 99999-9999" required />
+                    </div>
+                
+                    <!-- Botões -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                        <button type="button" class="btn btn-danger" onclick="window.history.back();">Voltar</button>
+                    </div>
+                </form>
+                
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
